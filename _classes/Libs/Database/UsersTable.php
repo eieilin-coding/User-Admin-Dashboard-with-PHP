@@ -51,8 +51,8 @@ class UsersTable
 
         try{
                 $statement = $this->db->prepare(
-                    "INSERT INTO users (name, email, phone, address, password, created_at) 
-                    VALUE (:name, :email, :phone, :address, :password, NOW())"
+                    "INSERT INTO users (name, email, password, address, phone, created_at) 
+                    VALUE (:name, :email, :password, :address, :phone,  NOW())"
                 );
                 $statement->execute($data);
                 return $this->db->lastInsertId();
